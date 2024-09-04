@@ -20,11 +20,19 @@ const player_cards = [];
 let p_sum = 0;
 
 
-//目標値設定
-const target =  Math.floor(Math.random() * (16) + 15);
-console.log(target);
-const target_text = document.getElementById("target_text");
-target_text.textContent = String(target);
+/// localStorageから目標値を取得して表示
+const target = localStorage.getItem("target_value");
+if (target) {
+    document.getElementById("target_text").textContent = target;
+} else {
+    document.getElementById("target_text").textContent = "目標値が設定されていません";
+}
+
+// //目標値設定
+// const target =  Math.floor(Math.random() * (16) + 15);
+// console.log(target);
+// const target_text = document.getElementById("target_text");
+// target_text.textContent = String(target);
 
 
 
