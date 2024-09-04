@@ -18,17 +18,5 @@
             
             
         </div>
-        
-        <script>
-            document.getElementById("get").addEventListener("click", async () => {
-                // 目標値を生成してlocalStorageに保存
-                const target = Math.floor(Math.random() * (16) + 15);
-                localStorage.setItem("target_value", target);
-                console.log("目標値: " + target);
-                
-                // リダイレクト
-                window.location.href = "home.html";
-            });
-        </script>
     </body>
 </html>
