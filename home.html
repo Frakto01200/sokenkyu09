@@ -3,17 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>【テスト環境】ブラックジャック</title>
+        <link rel="stylesheet" href="css/home.css">
+        <title>BlackJack</title>
     </head>
 
     <body>
         <div>
-            <header></header>
+        	<img src="image/背景.png" class="back">
 
-            <h1>BlackJack</h1>
-
-            <h5>目標値</h5>
-            <h3 id = "target_text"></h3>
+            <h1 class="title">B　l　a　c　k　J　a　c　k</h1>
+			
+            <h5 class="thegoal">目標値</h5>
+            <h3 id = "target_text" class="target"></h3>
+            <img src="image/目標.png" class="target_src">
 
             <p id = "msg"></p>
 
@@ -23,13 +25,14 @@
 
             <p>プレイヤー手札</p>
             <div id = "player">
-                
                 <p>合計値</p>
                 <h4 id = "p_sum"></h4>
             </div>
             
-            <button id = "hit" onclick = "hit()">ヒット</button>
-            <button id = "stand" onclick = "stand()">スタンド</button>
+            
+            
+            <button id = "hit" onclick = "hit()" class="hit">ヒット</button>
+            <button id = "stand" onclick = "stand()" class="stand">スタンド</button>
 
 
             <footer></footer>
