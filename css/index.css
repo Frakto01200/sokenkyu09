@@ -7,6 +7,7 @@ body, html {
 
 div {
     height: 100%;
+    position: relative;
 }
 
 .title {
@@ -19,13 +20,17 @@ div {
     text-align: center;
     font-family: 'Noto Sans JP', sans-serif; /* フォント指定 */
     font-weight: 10;  /* フォントの細さを指定 */
+    z-index: 2;  /* 他の要素の上に表示 */
 }
-
 
 .back {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;  /* 背景画像は最背面 */
 }
 
 .coin {
@@ -33,10 +38,11 @@ div {
     top: 70%;
     left: 35%;
     transform: translate(-50%, -50%);
-    width: 68%; /* コイン画像*/
+    width: 68%; /* コイン画像 */
+    z-index: 1;  /* コイン画像も背面 */
 }
 
-.start {
+#get {
     position: absolute;
     top: 55%; /* 縦の中央に配置 */
     left: 50%; /* 横の中央に配置 */
@@ -44,7 +50,7 @@ div {
     background-color: #fff;
     color: #000;
     padding: 5px 60px; /* ボタンの内側の余白を調整 */
-    text-decoration: none; /* アンダーラインを削除 */
     border-radius: 5px; /* ボタンの角を丸くする */
     font-size: 18px; /* フォントサイズを調整 */
+    z-index: 3;  /* ボタンが最前面に来るように設定 */
 }
