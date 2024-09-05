@@ -112,7 +112,11 @@ button {
 }
 
 
-
+.sum {
+	  position: absolute;
+	  top: 50%;
+      left: 49%;
+}
 
 
 
