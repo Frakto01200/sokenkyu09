@@ -1,4 +1,3 @@
-
 //画面読み込み時
 // window.onload = function onLoad() {}
 // console.log("onload");
@@ -9,6 +8,7 @@ class Card {
         this.num = num;
     }
 }
+
 //山札配列
 const cards = [];
 //山札から引いた数
@@ -18,7 +18,6 @@ let hit_flg = false;
 //手札配列
 const player_cards = [];
 let p_sum = 0;
-
 
 /// localStorageから目標値を取得して表示
 const target = localStorage.getItem("target_value");
@@ -46,10 +45,12 @@ for (let i = 0; i < card_type.length; i++) {
         //   console.log(count +': type:' + card_type[i] + ' num:' + j);
         count++;
     }
-
 }
+
 //シャッフルする
 let i = cards.length;
+
+
 //ランダムな位置と入れ替え
 while (i) {
     let swap_idx = Math.floor(Math.random() * i--);
@@ -117,8 +118,6 @@ function viwe_and_sum() {
 }
 
 
-
-
 //ヒット選択時
 function hit() {
     picup_cnt++;
@@ -131,9 +130,14 @@ function hit() {
 
 //スタンド選択時
 function stand() {
+    // ヒットとスタンドのボタンを無効化する
+    document.getElementById("hit").disabled = true;
+    document.getElementById("stand").disabled = true;
 
+    // CPU の手札や結果を処理するロジックを追加する
+	
+	
 }
-
 
 
 //合計値チェック
@@ -141,9 +145,12 @@ function sum_check(sum){
     const msg = document.getElementById("msg");
 
     if(target - sum >= 0){
-        msg.textContent = "せーふ";
+        msg.textContent = "セーフ";
     }else{
-        msg.textContent = "あうと";
+        msg.textContent = "バースト";
+        // ヒットとスタンドのボタンを無効化する
+        document.getElementById("hit").disabled = true;
+        document.getElementById("stand").disabled = true;
     }
 
 }
