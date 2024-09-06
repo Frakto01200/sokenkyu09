@@ -1,0 +1,123 @@
+.back {
+   background-size: cover;
+   background-position: center;
+   height: 100%;
+   width: 100%;
+   overflow: hidden;
+   }
+   
+   
+body {
+   margin: 0;
+   padding: 0;
+   font-family: Arial, sans-serif;
+   }
+   
+   
+h1 {
+   text-align: center;
+   margin-top: 10px;
+   }
+   
+   
+#game-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   height: 100vh;
+   padding: 20px;
+   box-sizing: border-box;
+   }
+        
+        
+#cpu, #player {
+   margin-bottom: 20px;
+   }
+        
+        
+button {
+   margin: 10px;
+   padding: 10px 20px;
+   font-size: 16px;
+   }
+        
+        
+.title {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;    /* 文字サイズ指定 */
+    color: #808080;     /* 文字色指定 */
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif; /* フォント指定 */
+    font-weight: 10;  /* フォントの細さを指定 */
+    z-index: 2;  /* 他の要素の上に表示 */
+}
+
+.thegoal{
+	position: absolute;
+    top: 2%;
+    left: 8%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;    /* 文字サイズ指定 */
+    color: #000000;     /* 文字色指定 */
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif; /* フォント指定 */
+    font-weight: 10;  /* フォントの細さを指定 */
+    z-index: 2;  /* 他の要素の上に表示 */
+}
+
+
+.target{
+    position: absolute;
+    top: 9%;
+    left: 8%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;    /* 文字サイズ指定 */
+    color: #000000;     /* 文字色指定 */
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif; /* フォント指定 */
+    font-weight: 10;  /* フォントの細さを指定 */
+    z-index: 2;  /* 他の要素の上に表示 */
+}
+
+
+.target_src {
+    position: absolute;
+    height: 30%;
+    width: 15%;
+    top: 1%; /* 縦の中央に配置 */
+    left: 1%; /* 横の中央に配置 */
+}
+
+
+.hit, .stand {
+     position: absolute;
+     top: 560px; /* 画面上部から10pxの位置 */
+     padding: 15px 50px; /* ボタンのサイズを調整 */
+     font-size: 18px; /* 文字のサイズを大きく */
+}
+
+.hit {
+	 color: #FF0000;
+     left: 400px; /* 画面左から10pxの位置 */
+     padding: 15px 60px; /* ボタンのサイズを調整 */
+}
+
+.stand {
+	  color: #000080;
+      right: 400px; /* 画面右から10pxの位置 */
+}
+
+
+.sum {
+	  position: absolute;
+	  top: 50%;
+      left: 49%;
+}
+
+
+
+
