@@ -1,42 +1,54 @@
 <!DOCTYPE html>
-<html lang="jp">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/home.css">
-        <title>BlackJack</title>
-    </head>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackJack</title>
+</head>
+<body>
+    <div class="container">
+        <img src="image/背景.png" class="back">
 
-    <body>
-        <div>
-        	<img src="image/背景.png" class="back">
+        <h1 class="title">B　l　a　c　k　J　a　c　k</h1>
+        
+        <h5 class="thegoal">目標値</h5>
+        <h3 id = "target_text" class="target"></h3>
+        <img src="image/目標.png" class="target_src">
+        
+        <p id = "msg"></p>
+        
+        <p>山札</p>
+        <div id = "fuda">
+            <div id="fuda-cards"></div>
+        </div>
 
-            <h1 class="title">B　l　a　c　k　J　a　c　k</h1>
-			
-            <h5 class="thegoal">目標値</h5>
-            <h3 id = "target_text" class="target"></h3>
-            <img src="image/目標.png" class="target_src">
-
-            <p id = "msg"></p>
-            
-            <p>Player手札</p>
-            <div id = "player">
-                <p>合計値</p>
-                <h4 id = "p_sum" class="sum"></h4>
-            </div>
-            
-            <p>CPU手札</p>
-            <div id = "cpu">
-                <p>合計値</p>
-                <h4 id = "c_sum" class="csum"></h4>
-            </div>
-
-            
-            <button id = "hit" onclick = "hit()" class="hit">ヒット</button>
-            <button id = "stand" onclick = "stand()" class="stand">スタンド</button>
-
-
+        <p>Player手札</p>
+        <div id = "player">
+            <p>合計値</p>
+            <h4 id = "p_sum" class="sum"></h4>
+            <div id="player-cards"></div>
         </div>
         
-        <script src="js/app.js"></script>
-    </body>
+        <p>CPU手札</p>
+        <div id = "cpu">
+            <p>合計値</p>
+            <h4 id = "c_sum" class="csum"></h4>
+            <div id="cpu-cards"></div>
+        </div>
+
+        <button id="hit" onclick="hit()">hit</button>
+        <button id="stand" onclick="stand()">stand</button>
+
+
+        <div id="totals-area">
+            <h2>スートごとの合計値:</h2>
+            <p>ハート: <span id="hearts-total">0</span></p>
+            <p>ダイヤ: <span id="diamonds-total">0</span></p>
+            <p>クラブ: <span id="clubs-total">0</span></p>
+            <p>スペード: <span id="spades-total">0</span></p>
+        </div>
+    </div>
+
+    <script src="js/add.js"></script>
+</body>
 </html>
