@@ -22,11 +22,13 @@ window.onload = () => {
             deckId = data.deck_id;
 			const fudaCardDiv = document.getElementById('fuda-cards');
 			const deckBackImg = document.createElement('img');
+			deckBackImg.width = "150";
+            deckBackImg.height = "210";
             deckBackImg.src = "https://deckofcardsapi.com/static/img/back.png";
             fudaCardDiv.appendChild(deckBackImg);
-			
-			
         });
+        
+        
 	//playerとcpuの手札を2枚ずつ配る
 	fetch(`${deckApiUrl}/new/draw/?count=4`)
         .then(response => response.json())
@@ -39,11 +41,15 @@ window.onload = () => {
             
             data.cards.forEach((card, index) => {
                 const cardImg = document.createElement('img');
+                cardImg.width = "150";
+                cardImg.height = "210";
                 cardImg.src = card.image;
                 cardImg.alt = `${card.value} of ${card.suit}`;
                 cardImg.dataset.value = card.value;
                 cardImg.dataset.suit = card.suit;
 				const deckBackImg = document.createElement('img');
+				deckBackImg.width = "150";
+                deckBackImg.height = "210";
             	deckBackImg.src = "https://deckofcardsapi.com/static/img/back.png";
 
 				//2枚づつカードを配る
@@ -75,6 +81,8 @@ function hit() {
 
             data.cards.forEach(card => {
                 const cardImg = document.createElement('img');
+                cardImg.width = "150";
+                cardImg.height = "210";
                 cardImg.src = card.image;
                 cardImg.alt = `${card.value} of ${card.suit}`;
                 cardImg.dataset.value = card.value;

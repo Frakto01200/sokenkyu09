@@ -45,7 +45,7 @@ button {
         
 .title {
     position: absolute;
-    top: 45%;
+    top: 44%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 30px;    /* 文字サイズ指定 */
@@ -114,10 +114,34 @@ button {
 
 .sum {
 	  position: absolute;
-	  top: 50%;
+	  top: 48%;
       left: 49%;
       color: #fff;
 }
+
+
+.fuda {
+	  position: absolute;
+	  top: 30%;
+      left: 80%;
+}
+
+
+.play {
+	  position: absolute;
+	  top: 60%;
+      left: 20%;
+}
+
+
+.cpu {
+	  position: absolute;
+	  top: 8%;
+      left: 20%;
+}
+
+
+
 
 
 
