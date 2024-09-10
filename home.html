@@ -18,16 +18,16 @@
         
         <p id = "msg"></p>
         
-        <p>山札</p>
         <div id = "fuda">
-            <div id="fuda-cards" class="fuda"></div>
+            <div id="fuda-cards" class="fuda"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;山札</p></div>
+            
         </div>
 
         <p>Player手札</p>
         <div id = "player">
             <p>合計値</p>
-            <h4 id = "p_sum" class="sum"></h4>
-            <div id="player-cards" class="play"></div>
+            <h4 id = "p_sum" class="sum"><p>合計値</p></h4>
+            <div id="player-cards" class="play"><p>Player手札</p></div>
         </div>
         
         <p>CPU手札</p>
@@ -36,9 +36,10 @@
             <h4 id = "c_sum" class="csum"></h4>
             <div id="cpu-cards" class="cpu"></div>
         </div>
-
+		<div class  = "button">
         <button id="hit" onclick="hit()">hit</button>
         <button id="stand" onclick="stand()">stand</button>
+        </div>
 
     </div>
 

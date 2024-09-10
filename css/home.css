@@ -114,7 +114,7 @@ button {
 
 .sum {
 	  position: absolute;
-	  top: 48%;
+	  top: 80%;
       left: 49%;
       color: #fff;
 }
@@ -129,7 +129,7 @@ button {
 
 .play {
 	  position: absolute;
-	  top: 60%;
+	  top: 70%;
       left: 20%;
 }
 
@@ -138,6 +138,12 @@ button {
 	  position: absolute;
 	  top: 8%;
       left: 20%;
+}
+.button {
+	    position: absolute;
+	    top: 90%;
+	    left: 80%;  
+        height: 50%; 
 }
 
 
