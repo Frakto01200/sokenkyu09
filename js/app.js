@@ -1,6 +1,7 @@
 let deckId;
 let totalPlayer = 0;
 let totalCpu = 0;
+let sum = 0;
 
 const deckApiUrl = "https://deckofcardsapi.com/api/deck";
 
@@ -47,10 +48,19 @@ window.onload = () => {
 
 				//2枚づつカードを配る
                 if (index < 2) {
-                    cardImg.onclick = () => selectCard(cardImg);
                     playerCardsDiv.appendChild(cardImg);
+
+                    // プレイヤーの合計値を計算
+                    const cardValue = calculateCardValue(card);
+                    totalPlayer += cardValue;
+                    document.getElementById('p_sum').textContent = totalPlayer;
                 } else {
                     cpuCardsDiv.appendChild(deckBackImg);
+
+                    // CPUの合計値を計算
+                    const cardValue = calculateCardValue(card);
+                    totalCpu += cardValue;
+                    document.getElementById('c_sum').textContent = totalCpu;
                 }
             });
         });
@@ -70,9 +80,15 @@ function hit() {
                 cardImg.dataset.value = card.value;
                 cardImg.dataset.suit = card.suit;
 
-                cardImg.onclick = () => selectCard(cardImg);
-
                 drawnCardsDiv.appendChild(cardImg);
+
+                // 合計値を計算して更新
+                const cardValue = calculateCardValue(card);
+                totalPlayer += cardValue;
+                document.getElementById('p_sum').textContent = totalPlayer;
+
+                // 合計値をチェック
+                sum_check(totalPlayer);
             });
         });
 }
@@ -88,93 +104,37 @@ function stand() {
 	
 }
 
-//合計値チェック
-function sum_check(sum){
+function sum_check(sum) {
+    const target = parseInt(localStorage.getItem("target_value"), 10); // 目標値を数値として取得
     const msg = document.getElementById("msg");
 
-    if(target - sum >= 0){
-        msg.textContent = "セーフ";
-    }else{
+    if (sum <= target) {
+        // msg.textContent = "セーフ";
+    } else {
         msg.textContent = "バースト";
         // ヒットとスタンドのボタンを無効化する
         document.getElementById("hit").disabled = true;
         document.getElementById("stand").disabled = true;
     }
-
 }
 
 
-// カードの合計値を計算する関数
-function calculateSum(cards) {
-    let sum = 0;
-    let aceCount = 0;
-    
-    cards.forEach(card => {
-        if (['JACK', 'QUEEN', 'KING'].includes(card.value)) {
-            sum += 10;
-        } else if (card.value === 'ACE') {
-            aceCount += 1;
-            sum += 11; // エースはまず11として計算
-        } else {
-            sum += parseInt(card.value);
-        }
-    });
+// カードの値を数値に変換する
+function calculateCardValue(card) {
+    const value = card.value;
+    if (value === 'ACE') {
 
-    // エースを1に変える必要があるか確認
-    while (sum > 21 && aceCount > 0) {
-        sum -= 10;
-        aceCount -= 1;
+        //1or11かを選ばせるロジックを書く
+        return 11;
+    } else if (['KING', 'QUEEN', 'JACK'].includes(value)) {
+        return 10;
+    } else {
+        return parseInt(value, 10); // 2から10までの数字カード
     }
-
-    return sum;
 }
+
+
+
 
 
 /////////////////////////////////////////////////////////
-
-
-// カードを選択してリストに追加、場から削除
-function selectCard(cardElement) {
-    const selectedCardsDiv = document.getElementById('selected-cards');
-    const clonedCard = cardElement.cloneNode(true); // カードを選択リストに追加
-    selectedCardsDiv.appendChild(clonedCard);
-
-    // カードの値をスートごとに合計値に追加
-    updateTotals(cardElement.dataset.suit, cardElement.dataset.value);
-
-    // 場から選択されたカードを削除
-    cardElement.remove();
-}
-
-// カードの値を数値に変換する
-function getCardValue(value) {
-    if (value === 'ACE') return 1;
-    if (value === 'JACK' || value === 'QUEEN' || value === 'KING') return 10;
-    return parseInt(value);
-}
-
-// スートごとの合計値を更新
-function updateTotals(suit, value) {
-    const cardValue = getCardValue(value);
-
-    switch (suit) {
-        case 'HEARTS':
-            totalHearts += cardValue;
-            document.getElementById('hearts-total').textContent = totalHearts;
-            break;
-        case 'DIAMONDS':
-            totalDiamonds += cardValue;
-            document.getElementById('diamonds-total').textContent = totalDiamonds;
-            break;
-        case 'CLUBS':
-            totalClubs += cardValue;
-            document.getElementById('clubs-total').textContent = totalClubs;
-            break;
-        case 'SPADES':
-            totalSpades += cardValue;
-            document.getElementById('spades-total').textContent = totalSpades;
-            break;
-        default:
-            break;
-    }
-}
