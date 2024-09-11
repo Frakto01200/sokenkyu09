@@ -20,7 +20,7 @@ h1 {
    }
    
    
-#game-container {
+#container {
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -35,7 +35,7 @@ h1 {
    margin-bottom: 20px;
    }
 
-#yamafuda{
+#fuda{
    z-index: 2;  /* 他の要素の上に表示 */
 }
         
@@ -97,29 +97,14 @@ button {
 }
 
 
-.hit, .stand {
-     position: absolute;
-     top: 560px; /* 画面上部から10pxの位置 */
-     padding: 15px 50px; /* ボタンのサイズを調整 */
-     font-size: 18px; /* 文字のサイズを大きく */
-}
-
-.hit {
-	 color: #FF0000;
-     left: 400px; /* 画面左から10pxの位置 */
-     padding: 15px 60px; /* ボタンのサイズを調整 */
-}
-
-.stand {
-	  color: #000080;
-      right: 400px; /* 画面右から10pxの位置 */
-}
-
-
-.sum {
-	  position: absolute;
-	  top: 50%;
-      left: 49%;
+/* 山札のスタイル */
+#fuda-cards img {
+  width: 100px;  /* カードの幅を指定 */
+  height: 150px; /* カードの高さを指定 */
+  position: relative;  /* 必要に応じてabsoluteなどに変更 */
+  left: 50px;  /* 左右位置を調整 */
+  top: 20px;   /* 上下位置を調整 */
+  /* 他のスタイルも追加可能 (例: margin, padding) */
 }
 
 
