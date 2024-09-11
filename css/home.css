@@ -60,7 +60,7 @@ button {
 .thegoal{
  position: absolute;
    top: 2%;
-   left: 8%;
+   left: 14%;
    transform: translate(-50%, -50%);
    font-size: 30px;    /* 文字サイズ指定 */
    color: #000000;     /* 文字色指定 */
@@ -74,7 +74,7 @@ button {
 .target{
    position: absolute;
    top: 9%;
-   left: 8%;
+   left: 14%;
    transform: translate(-50%, -50%);
    font-size: 60px;    /* 文字サイズ指定 */
    color: #000000;     /* 文字色指定 */
@@ -90,9 +90,8 @@ button {
    height: 30%;
    width: 15%;
    top: 1%; /* 縦の中央に配置 */
-   left: 1%; /* 横の中央に配置 */
+   left: 7%; /* 横の中央に配置 */
 }
-
 
 
 /* 山札のスタイル */
@@ -100,7 +99,7 @@ button {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 45%;
-  right: -4%;
+  right: -3%;
   text-align: center;
   z-index: 2;  /* 他の要素の上に表示 */
   margin: 0;
@@ -122,13 +121,57 @@ button {
 #player-cards{
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 80%;
-  left: 40%;
-  z-index: 2;  /* 他の要素の上に表示 */
+  top: 65%;
+  left: 32%;
+  
 }
 
 
+#player-cards img.card{
+  position: absolute;
+  top: 40%;
+  left: 40px;
+  z-index: 2;
+}
 
+
+#player-cards img.card:nth-child(2),
+#cpu-cards img.card:nth-child(2) {
+  left: 110px; /* 2番目のカードを少し右にずらす */
+  z-index: 3; /* 2番目のカードを前面に表示 */
+}
+
+#player-cards img.card:nth-child(3),
+#cpu-cards img.card:nth-child(3) {
+  left: 177px; /* 3番目のカードをさらに右にずらす */
+  z-index: 4; /* 3番目のカードをさらに前面に表示 */
+}
+
+#player-cards img.card:nth-child(4),
+#cpu-cards img.card:nth-child(4) {
+  left: 250px; /* 4番目のカードをさらに右にずらす */
+  z-index: 5; /* 4番目のカードをさらに前面に表示 */
+}
+
+#player-cards img.card:nth-child(5),
+#cpu-cards img.card:nth-child(5) {
+  left: 320px; /* 5番目のカードをさらに右にずらす */
+  z-index: 6; /* 5番目のカードをさらに前面に表示 */
+}
+
+#player-cards img.card:nth-child(6),
+#cpu-cards img.card:nth-child(6) {
+  left: 400px; /* 6番目のカードをさらに右にずらす */
+  z-index: 7; /* 6番目のカードをさらに前面に表示 */
+}
+
+#player-cards img.card:nth-child(7),
+#cpu-cards img.card:nth-child(7) {
+  left: 470px; /* 7番目のカードをさらに右にずらす */
+  z-index: 8; /* 7番目のカードをさらに前面に表示 */
+}
+
+/* 以降、必要に応じて追加 */
 #player .sum-container {
   position: absolute;
   transform: translate(-50%, -50%);
@@ -151,9 +194,16 @@ button {
 #cpu-cards{
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 20%;
-  left: 40%;
-  z-index: 2;  /* 他の要素の上に表示 */
+  top: 3%;
+  left: 32%;
+  
+}
+
+#cpu-cards img.card{
+  position: absolute;
+  top: 40%;
+  left: 40px;
+  z-index: 2;
 }
 
 #cpu .sum-container1 {
@@ -212,6 +262,7 @@ img.card {
   left: 50%;
   font-size: 150px;
   z-index: 3;  /* 他の要素の上に表示 */
+  font-family: serif; 
 }
 
 
