@@ -1,443 +1,547 @@
 .back {
-   background-size: cover;
-   background-position: center;
-   height: 100%;
-   width: 100%;
-   overflow: hidden;
-   }
-   
-   
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  }
+  
+  
 body {
-   margin: 0;
-   padding: 0;
-   font-family: Arial, sans-serif;
-   }
-   
-   
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  }
+  
+  
 h1 {
-   text-align: center;
-   margin-top: 10px;
-   }
-   
-   
+  text-align: center;
+  margin-top: 10px;
+  }
+  
+  
 #container {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: flex-start;
-   height: 100vh;
-   padding: 20px;
-   box-sizing: border-box;
-   }
-        
-        
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  }
+       
+       
 #cpu, #player {
-   margin-bottom: 20px;
-   }
-
-#fuda{
-   z-index: 2;  /* 他の要素の上に表示 */
-}
-        
-        
+  margin-bottom: 20px;
+  }
+       
+       
 button {
-   margin: 10px;
-   padding: 10px 20px;
-   font-size: 16px;
-   }
-        
-        
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  }
+       
+       
 .title {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;    /* 文字サイズ指定 */
-    color: #808080;     /* 文字色指定 */
-    text-align: center;
-    font-family: 'Noto Sans JP', sans-serif; /* フォント指定 */
-    font-weight: 10;  /* フォントの細さを指定 */
-    z-index: 2;  /* 他の要素の上に表示 */
+   position: absolute;
+   top: 48%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 30px;    /* 文字サイズ指定 */
+   color: #808080;     /* 文字色指定 */
+   text-align: center;
+   font-family: 'Noto Sans JP', sans-serif; /* フォント指定 */
+   font-weight: 10;  /* フォントの細さを指定 */
+   z-index: 2;  /* 他の要素の上に表示 */
 }
 
 .thegoal{
-	position: absolute;
-    top: 2%;
-    left: 8%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;    /* 文字サイズ指定 */
-    color: #000000;     /* 文字色指定 */
-    text-align: center;
-    font-family: 'Noto Sans JP', sans-serif; /* フォント指定 */
-    font-weight: 10;  /* フォントの細さを指定 */
-    z-index: 2;  /* 他の要素の上に表示 */
+ position: absolute;
+   top: 2%;
+   left: 8%;
+   transform: translate(-50%, -50%);
+   font-size: 30px;    /* 文字サイズ指定 */
+   color: #000000;     /* 文字色指定 */
+   text-align: center;
+   font-family: 'Noto Sans JP', sans-serif; /* フォント指定 */
+   font-weight: 10;  /* フォントの細さを指定 */
+   z-index: 2;  /* 他の要素の上に表示 */
 }
 
 
 .target{
-    position: absolute;
-    top: 9%;
-    left: 8%;
-    transform: translate(-50%, -50%);
-    font-size: 60px;    /* 文字サイズ指定 */
-    color: #000000;     /* 文字色指定 */
-    text-align: center;
-    font-family: 'Noto Sans JP', sans-serif; /* フォント指定 */
-    font-weight: 10;  /* フォントの細さを指定 */
-    z-index: 2;  /* 他の要素の上に表示 */
+   position: absolute;
+   top: 9%;
+   left: 8%;
+   transform: translate(-50%, -50%);
+   font-size: 60px;    /* 文字サイズ指定 */
+   color: #000000;     /* 文字色指定 */
+   text-align: center;
+   font-family: 'Noto Sans JP', sans-serif; /* フォント指定 */
+   font-weight: 10;  /* フォントの細さを指定 */
+   z-index: 2;  /* 他の要素の上に表示 */
 }
 
 
 .target_src {
-    position: absolute;
-    height: 30%;
-    width: 15%;
-    top: 1%; /* 縦の中央に配置 */
-    left: 1%; /* 横の中央に配置 */
+   position: absolute;
+   height: 30%;
+   width: 15%;
+   top: 1%; /* 縦の中央に配置 */
+   left: 1%; /* 横の中央に配置 */
 }
+
 
 
 /* 山札のスタイル */
-#fuda-cards img {
-  width: 100px;  /* カードの幅を指定 */
-  height: 150px; /* カードの高さを指定 */
-  position: relative;  /* 必要に応じてabsoluteなどに変更 */
-  left: 50px;  /* 左右位置を調整 */
-  top: 20px;   /* 上下位置を調整 */
-  /* 他のスタイルも追加可能 (例: margin, padding) */
+#fuda{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 45%;
+  right: -4%;
+  text-align: center;
+  z-index: 2;  /* 他の要素の上に表示 */
+  margin: 0;
 }
 
+#fuda p{
+  font-size: 30px;
+  margin: 0px;
+  color: #fff;
+}
+
+#fuda-cards img {
+ width: 70%;  /* カードの幅を指定 */
+ height: 70%; /* カードの高さを指定 */
+
+}
+
+/* playerのスタイル */
+#player-cards{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 80%;
+  left: 40%;
+  z-index: 2;  /* 他の要素の上に表示 */
+}
+
+
+
+#player .sum-container {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 58%;
+  left: 50%;
+  z-index: 2;  /* 他の要素の上に表示 */
+  display: flex;
+  align-items: center;  /* 垂直方向に中央揃え */
+  font-size: 25px;
+  color: #fff;
+  text-align: center;
+}
+
+#player .name {
+  margin-right: 15px;
+}
+
+
+/* cpuのスタイル */
+#cpu-cards{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 20%;
+  left: 40%;
+  z-index: 2;  /* 他の要素の上に表示 */
+}
+
+#cpu .sum-container1 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 42%;
+  left: 49%;
+  z-index: 2;  /* 他の要素の上に表示 */
+  display: flex;
+  align-items: center;  /* 垂直方向に中央揃え */
+  font-size: 25px;
+  color: #fff;
+  text-align: center;
+}
+
+#cpu .name {
+  margin-right: 15px;
+}
+
+
+/*hitのスタイル */
+#hit{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 90%;
+  right: 10%;
+  font-size: 30px;
+  color: #e60012;
+  padding-left: 40px;
+  padding-right: 40px;
+  z-index: 2;  /* 他の要素の上に表示 */
+}
+
+/*standのスタイル */
+#stand{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 90%;
+  right: -1%;
+  font-size: 30px;
+  color: #0b318f;
+  z-index: 2;  /* 他の要素の上に表示 */
+}
+
+/* カードの大きさ指定 */
+img.card {
+  width: 150px !important; 
+  height: 210px !important;
+}
+
+/* msgのスタイル */
+#msg {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 25%;
+  left: 50%;
+  font-size: 150px;
+  z-index: 3;  /* 他の要素の上に表示 */
+}
 
 
 
 /* ルーレットのcss */
 
 #roulette {
-   top: 20px;
-   left: 100px;
-   position: relative;
-   -webkit-animation-timing-function: cubic-bezier(0, 0.4, 0.4, 1.04);
-           animation-timing-function: cubic-bezier(0, 0.4, 0.4, 1.04);
-   -webkit-animation-duration: 1.8s;
-           animation-duration: 1.8s;
-   -webkit-animation-fill-mode: forwards;
-           animation-fill-mode: forwards;
-   -webkit-animation-iteration-count: 1;
-           animation-iteration-count: 1;
-   width: 308px;
-   height: 308px;
-   border-radius: 50%;
-   overflow: hidden;
-   counter-reset: num;
- }
- #roulette.number-1 {
-   -webkit-animation-name: 'number-1';
-           animation-name: 'number-1';
- }
- #roulette.number-2 {
-   -webkit-animation-name: 'number-2';
-           animation-name: 'number-2';
- }
- #roulette.number-3 {
-   -webkit-animation-name: 'number-3';
-           animation-name: 'number-3';
- }
- #roulette.number-4 {
-   -webkit-animation-name: 'number-4';
-           animation-name: 'number-4';
- }
- #roulette.number-5 {
-   -webkit-animation-name: 'number-5';
-           animation-name: 'number-5';
- }
- #roulette.number-6 {
-   -webkit-animation-name: 'number-6';
-           animation-name: 'number-6';
- }
- #roulette.number-7 {
-   -webkit-animation-name: 'number-7';
-           animation-name: 'number-7';
- }
- #roulette.number-8 {
-   -webkit-animation-name: 'number-8';
-           animation-name: 'number-8';
- }
- #roulette.number-9 {
-   -webkit-animation-name: 'number-9';
-           animation-name: 'number-9';
- }
- #roulette.number-10 {
-   -webkit-animation-name: 'number-10';
-           animation-name: 'number-10';
- }
- #roulette::after {
-   content: "";
-   display: block;
-   width: 80px;
-   height: 80px;
-   background-color: #fff;
-   border-radius: 50%;
-   margin: auto;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
-   position: absolute;
- }
- #roulette li {
-   top: 0;
-   right: 0;
-   left: 0;
-   margin: auto;
-   position: absolute;
-   display: block;
-   width: 100px;
-   height: 154px;
-   transform-origin: 50px 154px;
- }
- #roulette li::before {
-   top: 0;
-   left: 0;
-   position: absolute;
-   display: inline-block;
-   content: "";
-   width: 0;
-   height: 0;
-   border-style: solid;
-   border-width: 154px 50px;
-   z-index: 0;
- }
- #roulette li::after {
-   counter-increment: num;
-   content: counter(num);
-   z-index: 5;
-   position: absolute;
-   display: block;
-   width: 100px;
-   text-align: center;
-   line-height: 40px;
-   font-size: 20px;
-   color: #fff;
-   font-weight: bold;
- }
- #roulette li:nth-of-type(1) {
-   transform: rotate(36deg);
- }
- #roulette li:nth-of-type(1)::before {
-   border-color: #fff100 transparent transparent;
- }
- #roulette li:nth-of-type(2) {
-   transform: rotate(72deg);
- }
- #roulette li:nth-of-type(2)::before {
-   border-color: #f39800 transparent transparent;
- }
- #roulette li:nth-of-type(3) {
-   transform: rotate(108deg);
- }
- #roulette li:nth-of-type(3)::before {
-   border-color: #eb6100 transparent transparent;
- }
- #roulette li:nth-of-type(4) {
-   transform: rotate(144deg);
- }
- #roulette li:nth-of-type(4)::before {
-   border-color: #e60012 transparent transparent;
- }
- #roulette li:nth-of-type(5) {
-   transform: rotate(180deg);
- }
- #roulette li:nth-of-type(5)::before {
-   border-color: #e4007f transparent transparent;
- }
- #roulette li:nth-of-type(6) {
-   transform: rotate(216deg);
- }
- #roulette li:nth-of-type(6)::before {
-   border-color: #601986 transparent transparent;
- }
- #roulette li:nth-of-type(7) {
-   transform: rotate(252deg);
- }
- #roulette li:nth-of-type(7)::before {
-   border-color: #0b318f transparent transparent;
- }
- #roulette li:nth-of-type(8) {
-   transform: rotate(288deg);
- }
- #roulette li:nth-of-type(8)::before {
-   border-color: #036eb8 transparent transparent;
- }
- #roulette li:nth-of-type(9) {
-   transform: rotate(324deg);
- }
- #roulette li:nth-of-type(9)::before {
-   border-color: #00913a transparent transparent;
- }
- #roulette li:nth-of-type(10) {
-   transform: rotate(360deg);
- }
- #roulette li:nth-of-type(10)::before {
-   border-color: #8fc31f transparent transparent;
- }
- @-webkit-keyframes number-1 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(3204deg);
-   }
- }
- @keyframes number-1 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(3204deg);
-   }
- }
- @-webkit-keyframes number-2 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(3168deg);
-   }
- }
- @keyframes number-2 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(3168deg);
-   }
- }
- @-webkit-keyframes number-3 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(3132deg);
-   }
- }
- @keyframes number-3 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(3132deg);
-   }
- }
- @-webkit-keyframes number-4 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(3096deg);
-   }
- }
- @keyframes number-4 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(3096deg);
-   }
- }
- @-webkit-keyframes number-5 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(3060deg);
-   }
- }
- @keyframes number-5 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(3060deg);
-   }
- }
- @-webkit-keyframes number-6 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(3024deg);
-   }
- }
- @keyframes number-6 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(3024deg);
-   }
- }
- @-webkit-keyframes number-7 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(2988deg);
-   }
- }
- @keyframes number-7 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(2988deg);
-   }
- }
- @-webkit-keyframes number-8 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(2952deg);
-   }
- }
- @keyframes number-8 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(2952deg);
-   }
- }
- @-webkit-keyframes number-9 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(2916deg);
-   }
- }
- @keyframes number-9 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(2916deg);
-   }
- }
- @-webkit-keyframes number-10 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(2880deg);
-   }
- }
- @keyframes number-10 {
-   from {
-     transform: rotate(0);
-   }
-   to {
-     transform: rotate(2880deg);
-   }
- }
- 
+  top: 20px;
+  left: 100px;
+  position: relative;
+  -webkit-animation-timing-function: cubic-bezier(0, 0.4, 0.4, 1.04);
+          animation-timing-function: cubic-bezier(0, 0.4, 0.4, 1.04);
+  -webkit-animation-duration: 1.8s;
+          animation-duration: 1.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  width: 308px;
+  height: 308px;
+  border-radius: 50%;
+  overflow: hidden;
+  counter-reset: num;
+}
+#roulette.number-1 {
+  -webkit-animation-name: 'number-1';
+          animation-name: 'number-1';
+}
+#roulette.number-2 {
+  -webkit-animation-name: 'number-2';
+          animation-name: 'number-2';
+}
+#roulette.number-3 {
+  -webkit-animation-name: 'number-3';
+          animation-name: 'number-3';
+}
+#roulette.number-4 {
+  -webkit-animation-name: 'number-4';
+          animation-name: 'number-4';
+}
+#roulette.number-5 {
+  -webkit-animation-name: 'number-5';
+          animation-name: 'number-5';
+}
+#roulette.number-6 {
+  -webkit-animation-name: 'number-6';
+          animation-name: 'number-6';
+}
+#roulette.number-7 {
+  -webkit-animation-name: 'number-7';
+          animation-name: 'number-7';
+}
+#roulette.number-8 {
+  -webkit-animation-name: 'number-8';
+          animation-name: 'number-8';
+}
+#roulette.number-9 {
+  -webkit-animation-name: 'number-9';
+          animation-name: 'number-9';
+}
+#roulette.number-10 {
+  -webkit-animation-name: 'number-10';
+          animation-name: 'number-10';
+}
+#roulette::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+#roulette li {
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 154px;
+  transform-origin: 50px 154px;
+}
+#roulette li::before {
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 154px 50px;
+  z-index: 0;
+}
+#roulette li::after {
+  counter-increment: num;
+  content: counter(num);
+  z-index: 5;
+  position: absolute;
+  display: block;
+  width: 100px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+}
+#roulette li:nth-of-type(1) {
+  transform: rotate(36deg);
+}
+#roulette li:nth-of-type(1)::before {
+  border-color: #fff100 transparent transparent;
+}
+#roulette li:nth-of-type(2) {
+  transform: rotate(72deg);
+}
+#roulette li:nth-of-type(2)::before {
+  border-color: #f39800 transparent transparent;
+}
+#roulette li:nth-of-type(3) {
+  transform: rotate(108deg);
+}
+#roulette li:nth-of-type(3)::before {
+  border-color: #eb6100 transparent transparent;
+}
+#roulette li:nth-of-type(4) {
+  transform: rotate(144deg);
+}
+#roulette li:nth-of-type(4)::before {
+  border-color: #e60012 transparent transparent;
+}
+#roulette li:nth-of-type(5) {
+  transform: rotate(180deg);
+}
+#roulette li:nth-of-type(5)::before {
+  border-color: #e4007f transparent transparent;
+}
+#roulette li:nth-of-type(6) {
+  transform: rotate(216deg);
+}
+#roulette li:nth-of-type(6)::before {
+  border-color: #601986 transparent transparent;
+}
+#roulette li:nth-of-type(7) {
+  transform: rotate(252deg);
+}
+#roulette li:nth-of-type(7)::before {
+  border-color: #0b318f transparent transparent;
+}
+#roulette li:nth-of-type(8) {
+  transform: rotate(288deg);
+}
+#roulette li:nth-of-type(8)::before {
+  border-color: #036eb8 transparent transparent;
+}
+#roulette li:nth-of-type(9) {
+  transform: rotate(324deg);
+}
+#roulette li:nth-of-type(9)::before {
+  border-color: #00913a transparent transparent;
+}
+#roulette li:nth-of-type(10) {
+  transform: rotate(360deg);
+}
+#roulette li:nth-of-type(10)::before {
+  border-color: #8fc31f transparent transparent;
+}
+@-webkit-keyframes number-1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(3204deg);
+  }
+}
+@keyframes number-1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(3204deg);
+  }
+}
+@-webkit-keyframes number-2 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(3168deg);
+  }
+}
+@keyframes number-2 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(3168deg);
+  }
+}
+@-webkit-keyframes number-3 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(3132deg);
+  }
+}
+@keyframes number-3 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(3132deg);
+  }
+}
+@-webkit-keyframes number-4 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(3096deg);
+  }
+}
+@keyframes number-4 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(3096deg);
+  }
+}
+@-webkit-keyframes number-5 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(3060deg);
+  }
+}
+@keyframes number-5 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(3060deg);
+  }
+}
+@-webkit-keyframes number-6 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(3024deg);
+  }
+}
+@keyframes number-6 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(3024deg);
+  }
+}
+@-webkit-keyframes number-7 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(2988deg);
+  }
+}
+@keyframes number-7 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(2988deg);
+  }
+}
+@-webkit-keyframes number-8 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(2952deg);
+  }
+}
+@keyframes number-8 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(2952deg);
+  }
+}
+@-webkit-keyframes number-9 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(2916deg);
+  }
+}
+@keyframes number-9 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(2916deg);
+  }
+}
+@-webkit-keyframes number-10 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(2880deg);
+  }
+}
+@keyframes number-10 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(2880deg);
+  }
+}
