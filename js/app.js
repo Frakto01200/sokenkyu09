@@ -56,6 +56,25 @@ window.onload = () => {
                     totalPlayer += cardValue;
                     // 画面に表示させる
                     document.getElementById('p_sum').textContent = totalPlayer;
+
+
+                    const target = parseInt(localStorage.getItem("target_value"), 10);
+                    const msg = document.getElementById("msg");
+                    //最初に目標値より値が高ければバースト
+                    if(target < totalPlayer){
+                        msg.textContent = "運悪い";
+                        msg.style.color = "gold";
+    
+                        setTimeout(() => {
+                            window.location.href = "index.html";
+                        }, 3000); 
+                    
+                    //目標値と同じ数字になった場合hitできなくしてstandを自動的に呼ぶ
+                    }else if(target === totalPlayer){
+                        document.getElementById("hit").disabled = true;
+                        stand();
+                    }
+
                 } else {
                     cpuCardsDiv.appendChild(deckBackImg);
 
@@ -98,7 +117,8 @@ function hit() {
                 sum_check(totalPlayer);
 
                 const target = parseInt(localStorage.getItem("target_value"), 10);
-//目標値と同じ数字になった場合hitできなくしてstandを自動的に呼ぶ
+
+                //目標値と同じ数字になった場合hitできなくしてstandを自動的に呼ぶ
                 if(target === totalPlayer){
                     document.getElementById("hit").disabled = true;
                     stand();
@@ -155,7 +175,16 @@ function stand() {
                 });
         } else {
             // 最終結果を表示する
-            if (totalCpu > target) {
+            if(totalCpu === target || totalPlayer === target) {
+                if(totalCpu === target){
+                    msg.textContent = "Brack Jack! Lose";
+                    msg.style.color = "blue";
+                }else{
+                    msg.textContent = "Brack Jack! Win";
+                    msg.style.color = "red";
+                }
+                
+            } else if (totalCpu > target) {
                 msg.textContent = "You Win!";
                 msg.style.color = "red";
             } else if (totalCpu > totalPlayer) {
@@ -168,6 +197,12 @@ function stand() {
                 msg.textContent = "You Win!";
                 msg.style.color = "red";
             }
+
+
+            // 3秒後に index.html に戻る
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 3000);  
         }
     }
     // CPUがカードを引く処理を開始
@@ -199,5 +234,9 @@ function sum_check(sum) {
         // ヒットとスタンドのボタンを無効化する
         document.getElementById("hit").disabled = true;
         document.getElementById("stand").disabled = true;
+
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 3000); 
     }
 }
