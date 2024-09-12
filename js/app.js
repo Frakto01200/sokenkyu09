@@ -67,7 +67,7 @@ window.onload = () => {
     
                         setTimeout(() => {
                             window.location.href = "index.html";
-                        }, 3000); 
+                        }, 5000); 
                     
                     //目標値と同じ数字になった場合hitできなくしてstandを自動的に呼ぶ
                     }else if(target === totalPlayer){
@@ -202,7 +202,7 @@ function stand() {
             // 3秒後に index.html に戻る
             setTimeout(() => {
                 window.location.href = "index.html";
-            }, 3000);  
+            }, 5000);  
         }
     }
     // CPUがカードを引く処理を開始
