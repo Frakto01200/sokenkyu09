@@ -67,7 +67,11 @@ window.onload = () => {
     
                         setTimeout(() => {
                             window.location.href = "index.html";
+<<<<<<< HEAD
                         }, 3000); 
+=======
+                        }, 5000); 
+>>>>>>> 8ee4149803a4cfac86116236ad1eb5cf90742ddf
                     
                     //目標値と同じ数字になった場合hitできなくしてstandを自動的に呼ぶ
                     }else if(target === totalPlayer){
@@ -202,7 +206,11 @@ function stand() {
             // 3秒後に index.html に戻る
             setTimeout(() => {
                 window.location.href = "index.html";
+<<<<<<< HEAD
             }, 3000);  
+=======
+            }, 5000);  
+>>>>>>> 8ee4149803a4cfac86116236ad1eb5cf90742ddf
         }
     }
     // CPUがカードを引く処理を開始
