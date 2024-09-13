@@ -62,15 +62,17 @@ window.onload = () => {
                     const msg = document.getElementById("msg");
                     //最初に目標値より値が高ければバースト
                     if(target < totalPlayer){
-                        msg.textContent = "運悪い";
+                        msg.textContent = "start over";
                         msg.style.color = "gold";
     
                         setTimeout(() => {
                             window.location.href = "index.html";
-                        }, 3000); 
+                        }, 5000); 
                     
+                    
+                    }
                     //目標値と同じ数字になった場合hitできなくしてstandを自動的に呼ぶ
-                    }else if(target === totalPlayer){
+                    if(target === totalPlayer){
                         document.getElementById("hit").disabled = true;
                         stand();
                     }
@@ -199,10 +201,10 @@ function stand() {
             }
 
 
-            // 3秒後に index.html に戻る
+            // 5秒後に index.html に戻る
             setTimeout(() => {
                 window.location.href = "index.html";
-            }, 3000);  
+            }, 5000);  
         }
     }
     // CPUがカードを引く処理を開始
@@ -230,13 +232,13 @@ function sum_check(sum) {
         // msg.textContent = "セーフ";
     } else {
         // バーストの文字を真ん中に大きく出せるようにする
-        msg.textContent = "バースト";
+        msg.textContent = "Burst";
         // ヒットとスタンドのボタンを無効化する
         document.getElementById("hit").disabled = true;
         document.getElementById("stand").disabled = true;
 
         setTimeout(() => {
             window.location.href = "index.html";
-        }, 3000); 
+        }, 5000); 
     }
 }
