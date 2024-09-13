@@ -252,7 +252,6 @@ button {
 img.card {
   width: 150px !important; 
   height: 210px !important;
-  white-space: nowrap;  /* 折り返しを防止 */
 }
 
 /* msgのスタイル */
@@ -262,7 +261,6 @@ img.card {
   top: 25%;
   left: 50%;
   font-size: 150px;
-  white-space: nowrap;  /* 折り返しを防止 */
   z-index: 3;  /* 他の要素の上に表示 */
   font-family: serif; 
 }
