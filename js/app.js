@@ -201,10 +201,10 @@ function stand() {
             }
 
 
-            // 5秒後に index.html に戻る
+            // 3秒後に index.html に戻る
             setTimeout(() => {
                 window.location.href = "index.html";
-            }, 5000);  
+            }, 3000);  
         }
     }
     // CPUがカードを引く処理を開始
@@ -239,6 +239,6 @@ function sum_check(sum) {
 
         setTimeout(() => {
             window.location.href = "index.html";
-        }, 5000); 
+        }, 3000); 
     }
 }
